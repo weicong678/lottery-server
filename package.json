@@ -1,0 +1,25 @@
+{
+  "name": "koa-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "baidu-aip-sdk": "^2.3.9",
+    "cheerio": "^1.0.0-rc.3",
+    "iconv": "^2.3.4",
+    "iconv-lite": "^0.4.24",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-multer": "^1.0.2",
+    "koa-router": "^7.4.0",
+    "koa-static-cache": "^5.1.2",
+    "mysql": "^2.16.0",
+    "superagent": "^5.0.2",
+    "superagent-charset": "^1.2.0"
+  }
+}
