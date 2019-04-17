@@ -1,8 +1,8 @@
 const mysql_config = {
     user: 'root',
-    password: 'mima8234',
+    password: 'Mima8234.',
     database: 'lottery',
-    host: 'localhost',
+    host: '47.105.49.169',
     port: '3306'
 }
 
