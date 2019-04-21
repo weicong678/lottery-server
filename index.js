@@ -9,20 +9,21 @@ const query = require('./sql')
 const redeem = require('./redeem')
 const app = new Koa()
 const router = new Router()
+const cors = require('koa2-cors')
 
 // SSL
-
 var options = {
     key: fs.readFileSync('./vip_nginx/vip.key'),
     cert: fs.readFileSync('./vip_nginx/vip.pem')
 }
 
-app.use(koaStaticCache(__dirname + '/static', {
+app.use(koaStaticCache(__dirname + '/dist', {
     prefix: '/',
     maxAge: 0,
     gzip: true
 }))
 
+app.use(cors());
 app.use(enforceHttps())
 app.use(bodyParser())
 
@@ -58,7 +59,13 @@ router
             msg: 'success',
             data: result
         }
-
+    })
+    .post('/auth/login', async ctx => {
+        console.log(1)
+        ctx.body = { 'errno': 0, 'data': 'd76b0c86-051c-4567-85c8-ab8320c42168', 'errmsg': '成功' }
+    })
+    .get('/auth/info', async ctx => {
+        ctx.body = { 'errno': 0, 'data': { 'roles': ['超级管理员'], 'name': 'admin123', 'perms': ['*'], 'avatar': 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif' }, 'errmsg': '成功' }
     })
    
 app
